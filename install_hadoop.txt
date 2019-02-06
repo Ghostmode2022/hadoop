@@ -1,0 +1,25 @@
+Hadoop version repository (Index of /hadoop/common): http://apache.mirrors.tds.net/hadoop/common/
+The blog from where the installation process is taken is <https://medium.com/@jeevananandanne/setup-4-node-hadoop-cluster-on-aws-ec2-instances-1c1eeb4453bd>
+
+Installing Hadoop
+sudo apt-get update && sudo apt-get dist-upgrade
+sudo apt-get install openjdk-8-jdk
+wget http://apache.mirrors.tds.net/hadoop/common/stable2//hadoop-3.2.0.tar.gz -P ~/Downloads
+sudo tar zxvf ~/Downloads/hadoop-* -C /usr/local
+sudo mv /usr/local/hadoop-* /usr/local/hadoop
+
+Open the bashrc file and write the following in the file and then save it 
+#For Java:
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin
+#For Hadoop:
+export HADOOP_HOME=/usr/local/hadoop
+export PATH=$PATH:$HADOOP_HOME/bin
+#For Hadoop Configuration directory:
+export HADOOP_CONF_DIF=/usr/local/hadoop/etc/hadoop
+#For reflecting to current session with out restarting.
+source ~/.bashrc
+
+
+how to check if hadoop is installed in a ubuntu system
+hadoop version
