@@ -17,6 +17,8 @@ export HADOOP_HOME=/usr/local/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin
 #For Hadoop Configuration directory:
 export HADOOP_CONF_DIF=/usr/local/hadoop/etc/hadoop
+#For starting the Hadoop daemons
+export PATH=$PATH:/usr/local/hadoop/sbin
 
 
 #For reflecting to current session with out restarting.
@@ -29,3 +31,13 @@ sudo chown -R ubuntu logs (ubuntu should be replced by the output of echo $USER 
 
 how to check if hadoop is installed in a ubuntu system
 hadoop version
+
+
+The $HADOOP_INSTALL/hadoop/bin directory contains some scripts used to launch Hadoop DFS and Hadoop Map/Reduce daemons. These are:
+start-dfs.sh - Starts the Hadoop DFS daemons, the namenode and datanodes. Use this before start-mapred.sh
+stop-dfs.sh - Stops the Hadoop DFS daemons.
+start-mapred.sh - Starts the Hadoop Map/Reduce daemons, the jobtracker and tasktrackers.
+stop-mapred.sh - Stops the Hadoop Map/Reduce daemons.
+start-all.sh - Starts all Hadoop daemons, the namenode, datanodes, the jobtracker and tasktrackers. Deprecated; use start-dfs.sh then start-mapred.sh
+stop-all.sh - Stops all Hadoop daemons. Deprecated; use stop-mapred.sh then stop-dfs.sh
+
