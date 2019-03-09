@@ -17,9 +17,15 @@ export HADOOP_HOME=/usr/local/hadoop
 export PATH=$PATH:$HADOOP_HOME/bin
 #For Hadoop Configuration directory:
 export HADOOP_CONF_DIF=/usr/local/hadoop/etc/hadoop
+
+
 #For reflecting to current session with out restarting.
 source ~/.bashrc
 
+
+Go to the location: /usr/local/hadoop
+sudo mkdir logs
+sudo chown -R ubuntu logs (ubuntu should be replced by the output of echo $USER )
 
 how to check if hadoop is installed in a ubuntu system
 hadoop version
