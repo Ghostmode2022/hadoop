@@ -32,6 +32,9 @@ sudo chown -R ubuntu logs (ubuntu should be replced by the output of echo $USER 
 how to check if hadoop is installed in a ubuntu system
 hadoop version
 
+go to the folder /usr/local/hadoop/etc/hadoop 
+input the java path in the file hadoop-env.sh
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 
 The $HADOOP_INSTALL/hadoop/bin directory contains some scripts used to launch Hadoop DFS and Hadoop Map/Reduce daemons. These are:
 start-dfs.sh - Starts the Hadoop DFS daemons, the namenode and datanodes. Use this before start-mapred.sh
